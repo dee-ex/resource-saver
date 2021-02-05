@@ -38,3 +38,9 @@ func (serv *Service) CreateResource(data ResourceCreationInput) (*entities.Resou
   // if no error
   return &resource, nil
 }
+
+func (serv *Service) GetResourceByCode(code string) (*entities.Resource, error) {
+  resource, err := serv.repo.GetResourceByCode(code)
+
+  return resource, err
+}
